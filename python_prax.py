@@ -118,7 +118,7 @@ with open(csvpath, newline='') as csv_file:
     line_count = 0
     dates = []
     value = []
-    highest_value = []
+    highest_value = 0
     next(csv_reader)  # Header does not print
     for row in csv_reader:
         # print(row)
