@@ -126,11 +126,11 @@ with open(csvpath, newline='') as csv_file:
         # print(value)
         profits = int(row[1]) + profits
         # print(profits)
-
+    if profits > profits +1 then
+    profits = highest_value
+    else
 print("Financial Analysis")
 print("------------------")
-
-
 
 print ("Total Months: " + (str(len(dates))))
 ## ANSWER!! total number of months included in the dataset!!
