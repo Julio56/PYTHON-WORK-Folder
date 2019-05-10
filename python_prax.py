@@ -121,19 +121,25 @@ with open(csvpath, newline='') as csv_file:
     next(csv_reader)  # Header does not print
     for row in csv_reader:
         # print(row)
-        # dates.append(row[0]) 
+        dates.append(row[0]) 
         # value.append(row[1])
         # print(value)
         profits = int(row[1]) + profits
         # print(profits)
-print(profits)        
-# 2nd question!!      
+
+print("Financial Analysis")
+print("------------------")
 
 
 
-    # print ("There are " + (str(len(dates)) + " months."))
-    # print(dates)    
-        
+print ("Total Months: " + (str(len(dates))))
+## ANSWER!! total number of months included in the dataset!!
+#print(dates)    
+
+print("Total: " + (str(profits)))       
+##ANSWER!!The net total amount of "Profit/Losses" 
+# #over the entire period answer !!      
+
 
 
 # lines = [line for line in open(csvpath)]
