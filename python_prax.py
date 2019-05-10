@@ -118,6 +118,7 @@ with open(csvpath, newline='') as csv_file:
     line_count = 0
     dates = []
     value = []
+    highest_value = []
     next(csv_reader)  # Header does not print
     for row in csv_reader:
         # print(row)
@@ -126,9 +127,12 @@ with open(csvpath, newline='') as csv_file:
         # print(value)
         profits = int(row[1]) + profits
         # print(profits)
-    if profits > profits +1 then
-    profits = highest_value
-    else
+    for highest_value in profits:
+        if profits > profits +1:
+            highest_value.append(profits)
+
+
+ 
 print("Financial Analysis")
 print("------------------")
 
