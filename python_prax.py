@@ -1,4 +1,4 @@
-# title = "HotDog"
+# title = "Python_Prax"
 # years = 80
 # expert_status = True
 # print("Nick is a professional " + title)
@@ -96,9 +96,13 @@
 #######################################
 import os
 import csv
+profits = 0
+highest_value = 0  # 1170593 is the highest value
+lowest_value = 0  #  -1196225 is the lowest value
 
-dates = []
-value = []
+
+# dates = []
+# value = []
 
 # with open('RUTJC201904DATA3/hw/week3/Instructions/PyBank/Resources/budget_data.csv', 'r') as file_handler:
 #     lines = file_handler.read()
@@ -106,21 +110,31 @@ value = []
 #     print(type(lines))
 
 
-
+# csvpath = "../RUTJC201904DATA3/hw/week3/Instructions/PyBank/Resources/budget_data.csv"
 csvpath = os.path.join('..' ,'RUTJC201904DATA3/hw/week3/Instructions/PyBank/Resources/budget_data.csv')
  
 with open(csvpath, newline='') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
     dates = []
+    value = []
     next(csv_reader)  # Header does not print
     for row in csv_reader:
-        # print(row)]
-        dates.append(row[0])
-    print ("There are " + (str(len(dates)) + " months."))
-    #print(dates)    
+        # print(row)
+        # dates.append(row[0]) 
+        # value.append(row[1])
+        # print(value)
+        profits = int(row[1]) + profits
+        # print(profits)
+print(profits)        
+# 2nd question!!      
 
-# print(str(len([0])))
+
+
+    # print ("There are " + (str(len(dates)) + " months."))
+    # print(dates)    
+        
+
 
 # lines = [line for line in open(csvpath)]
 
