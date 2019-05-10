@@ -127,9 +127,6 @@ with open(csvpath, newline='') as csv_file:
 # lines[0]
 
 
-##### We are testing here!!!#####
-##and now we are testing here!!
-#and finally here!!
 
 
 
