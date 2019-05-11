@@ -127,7 +127,7 @@ with open(csvpath, newline='') as csv_file:
     highest_value = 0
     next(csv_reader)  # Header does not print
     for row in csv_reader:
-        # print(row)
+        print(row)
         dates.append(row[0]) 
         value.append(row[1])
         # print(value)
@@ -160,9 +160,11 @@ Total_Profits = str(profits)
 # lines[0]
 
 ## Equation!! Average change in profits
-# avg_Change = sum(value) / len(value)
-# print(avg_Change)
-
+## the average change is going to be a loop that gives us the difference 
+#between each of the profits during the month.
+Change = 0
+Change = int(row[1]) - Change
+print(Change)
 
 
 
