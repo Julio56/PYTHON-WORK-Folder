@@ -163,10 +163,7 @@ Total_Profits = str(profits)
 
 ## Equation!! Average change in profits
 
-Last_Profit_Change = float(row[1])
-Profit_Change = float(row[1]) - Last_Profit_Change
-Profit_change_List = Profit_change_List + [Profit_Change]
-Month = Month + [row[0]]
+
 
 
 
@@ -174,9 +171,7 @@ Month = Month + [row[0]]
 
 
 # ## Equation!! Greatest Increase in profits (date and amount)
-if Profit_Change > Greatest_increase[1]:
-    Greatest_increase[1] = Profit_Change
-    Greatest_increase[0] = row[0]
+
 
 ## Equation!! Biggest Decrease in profits
 
@@ -188,6 +183,9 @@ print("Financial Analysis")
 print("------------------")
 print("Total Months: " + str(Total_Months))
 print("Total: " + str(Total_Profits))
-
+print("Average Revenue Change: " 
+print("Greatest Increase in Revenue: " 
+print("Greatest Decrease in Revenue: "
+print("")
 
 
