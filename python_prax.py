@@ -97,8 +97,8 @@
 import os
 import csv
 profits = 0
-Greatest_increase = [" ", 0]  # 1170593 is the highest value
-Biggest_Decrease = [" ", 9999999]   #  -1196225 is the lowest value
+Greatest_Increase = 0 # 1170593 is the highest value
+Biggest_Decrease = 0  #  -1196225 is the lowest value
 Profit_Change = 0
 Last_Profit_Change = 0
 Month = []
@@ -127,6 +127,7 @@ with open(csvpath, newline='') as csv_file:
     line_count = 0
     dates = []
     value = []
+   
     highest_value = 0
     next(csv_reader)  # Header does not print
     for row in csv_reader:
@@ -171,7 +172,12 @@ Total_Profits = str(profits)
 
 
 # ## Equation!! Greatest Increase in profits (date and amount)
+Greatest_Increase = max(value)
 
+Greatest_Index = value.index(Greatest_Increase)
+Greatest_Date = dates[Greatest_Index]
+#print(Greatest_Increase)
+#print(Greatest_Date)
 
 ## Equation!! Biggest Decrease in profits
 
@@ -183,9 +189,5 @@ print("Financial Analysis")
 print("------------------")
 print("Total Months: " + str(Total_Months))
 print("Total: " + str(Total_Profits))
-print("Average Revenue Change: " 
-print("Greatest Increase in Revenue: " 
-print("Greatest Decrease in Revenue: "
-
-
-
+# print("Average Revenue Change: ")
+print("Greatest Increase in Profits: " + str(Greatest_Increase) + " in " + str(Greatest_Date))
