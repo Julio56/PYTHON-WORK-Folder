@@ -159,16 +159,22 @@ Total_Profits = str(profits)
 
 # lines[0]
 
-## Equation!! Average change in profits
+## Equation!! Average change in profits:  
+# I need to hold the value of each change, 
 ## the average change is going to be a loop that gives us the difference 
 #between each of the profits during the month.
-# 
-Change = 0
-for x in (row[1]):
-      Change = Change - x
+# you can get the differences(kinda like it's own column), then at the end sum the array.
+# **MAKE A LIST WHERE YOU CAN KEEP ADDING TO IT
+# Change = 0
+# Profit_List = row[1]
+# for x in Profit_List:
+#     print(x - x)
 
-print(Change)
+# for x in (row[1]):
+#       Change = Change - x
 
+# print(Change)
+# print(x)
 
 
 
