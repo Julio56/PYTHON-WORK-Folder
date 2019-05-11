@@ -162,10 +162,12 @@ Total_Profits = str(profits)
 ## Equation!! Average change in profits
 ## the average change is going to be a loop that gives us the difference 
 #between each of the profits during the month.
+# 
 Change = 0
-Change = int(row[1]) - Change
-print(Change)
+for x in (row[1]):
+      Change = Change - x
 
+print(Change)
 
 
 
