@@ -150,7 +150,8 @@ print("Total: " + (str(profits)))
 
 # lines[0]
 
-
-
+#####################
+#working on question 3 - the average of the changes
+##in "Profit/Losses" over the entire period!!
 
 
