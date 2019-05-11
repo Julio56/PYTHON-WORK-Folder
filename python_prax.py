@@ -186,6 +186,6 @@ print("Total: " + str(Total_Profits))
 print("Average Revenue Change: " 
 print("Greatest Increase in Revenue: " 
 print("Greatest Decrease in Revenue: "
-print("")
+
 
 
