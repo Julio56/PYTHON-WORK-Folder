@@ -97,8 +97,14 @@
 import os
 import csv
 profits = 0
-highest_value = 0  # 1170593 is the highest value
-lowest_value = 0  #  -1196225 is the lowest value
+Greatest_increase = 0  # 1170593 is the highest value
+Biggest_Decrease = 0  #  -1196225 is the lowest value
+Profit_Change = 0
+Last_Profit_Change = 0
+Month = []
+Total_Months += 1
+Total_Profits = 0
+
 
 
 # dates = []
@@ -123,32 +129,47 @@ with open(csvpath, newline='') as csv_file:
     for row in csv_reader:
         # print(row)
         dates.append(row[0]) 
-        # value.append(row[1])
+        value.append(row[1])
         # print(value)
         profits = int(row[1]) + profits
         # print(profits)
-    for highest_value in profits:
-        if profits > profits +1:
-            highest_value.append(profits)
+    # for Greatest_increase in profits:
+    #     if profits > profits +1:
+    #         Greatest_increase.append(profits)
 
 
  
 print("Financial Analysis")
 print("------------------")
 
-print ("Total Months: " + (str(len(dates))))
+# print("Total Months: " + (str(len(dates))))
+Total_Months = len(dates)
+print("Total Months: " + str(Total_Months))
 ## ANSWER!! total number of months included in the dataset!!
 #print(dates)    
 
-print("Total: " + (str(profits)))       
+# print("Total: " + (str(profits)))       
 ##ANSWER!!The net total amount of "Profit/Losses" 
 # #over the entire period answer !!      
-
+Total_Profits = str(profits)
+print("Total: " + str(Total_Profits))
 
 
 # lines = [line for line in open(csvpath)]
 
 # lines[0]
 
+## Answer!! Average change in profits
+
+
+
+
+
+
+
+# ## Answer!! Greatest Increase in profits (date and amount)
+# if Profit_Change > Greatest_increase[1]:
+#     Greatest_increase[1] = Profit_Change
+#     Greatest_increase[0] = row[0]
 
 
