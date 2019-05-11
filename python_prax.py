@@ -99,13 +99,9 @@ import csv
 profits = 0
 Greatest_Increase = 0 # 1170593 is the highest value
 Biggest_Decrease = 0  #  -1196225 is the lowest value
-Profit_Change = 0
-Last_Profit_Change = 0
-Month = []
 Total_Months += 1
 Total_Profits = 0
-Profit_change_List = []
-
+Average_Change = 0
 
 ##
 
@@ -163,7 +159,8 @@ Total_Profits = str(profits)
 # lines[0]
 
 ## Equation!! Average change in profits
-
+Average_Change = sum(value) / len(value)
+print(Average_Change)
 
 
 
@@ -173,13 +170,18 @@ Total_Profits = str(profits)
 
 # ## Equation!! Greatest Increase in profits (date and amount)
 Greatest_Increase = max(value)
-
 Greatest_Index = value.index(Greatest_Increase)
 Greatest_Date = dates[Greatest_Index]
 #print(Greatest_Increase)
 #print(Greatest_Date)
 
 ## Equation!! Biggest Decrease in profits
+Biggest_Decrease = min(value)
+Decrease_Index = value.index(Biggest_Decrease)
+Decrease_Date = dates[Decrease_Index]
+
+# print(Biggest_Decrease)
+# print(Decrease_Date)
 
 
 
@@ -191,3 +193,4 @@ print("Total Months: " + str(Total_Months))
 print("Total: " + str(Total_Profits))
 # print("Average Revenue Change: ")
 print("Greatest Increase in Profits: " + str(Greatest_Increase) + " in " + str(Greatest_Date))
+print("Greatest Decrease in Profits: " + str(Biggest_Decrease) + " in " + str(Decrease_Date))
