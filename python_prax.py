@@ -178,7 +178,6 @@ date_min = dates[change.index(Min)+1]
 date_max = dates[change.index(Max)+1]
 avg_change = sum(change)/len(change)	
 
-print ('Average Change ' + '$'+str(round(avg_change,2)))
 # print(change)
 
 
@@ -201,6 +200,10 @@ print("Financial Analysis")
 print("------------------")
 print("Total Months: " + str(Total_Months))
 print("Total: " + str(Total_Profits))
+print ('Average Change ' + '$'+str(round(avg_change,2)))
+print ('Greatest Increase in Profits ' + date_max + ' $'+str(Max))
+print ("Greatest Decrease in Profits " + date_min + ' ($'+str(abs(Min))+')' )
+
 # print("Average Revenue Change: ")
 # print("Greatest Increase in Profits: " 
 # print("Greatest Decrease in Profits: " 
