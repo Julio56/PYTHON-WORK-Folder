@@ -103,6 +103,8 @@ Total_Months = []
 Total_Profits = []
 Monthly_Change = []
 
+dates = []
+value = []
 ##
 
 
@@ -121,13 +123,12 @@ csvpath = os.path.join('..' ,'RUTJC201904DATA3/hw/week3/Instructions/PyBank/Reso
 with open(csvpath, newline='') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
-    dates = []
-    value = []
+
    
     highest_value = 0
     next(csv_reader)  # Header does not print
     for row in csv_reader:
-        print(row)
+        # print(row)
         dates.append(row[0]) 
         value.append(row[1])
         # print(value)
@@ -165,17 +166,20 @@ Total_Profits = str(profits)
 #between each of the profits during the month.
 # you can get the differences(kinda like it's own column), then at the end sum the array.
 # **MAKE A LIST WHERE YOU CAN KEEP ADDING TO IT
-# Change = 0
-# Profit_List = row[1]
-# for x in Profit_List:
-#     print(x - x)
+change = []
 
-# for x in (row[1]):
-#       Change = Change - x
 
-# print(Change)
-# print(x)
+for i in range(len(value)-1):
+    change.append (value[i+1]-value[i])
 
+Min = min(change)
+Max = max(change)
+date_min = dates[change.index(Min)+1]
+date_max = dates[change.index(Max)+1]
+avg_change = sum(change)/len(change)	
+
+print ('Average Change ' + '$'+str(round(avg_change,2)))
+# print(change)
 
 
 
