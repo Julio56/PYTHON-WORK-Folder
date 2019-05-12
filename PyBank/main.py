@@ -7,8 +7,7 @@ Greatest_Increase = 0 # 1170593 is the highest value
 Biggest_Decrease = 0  #  -1196225 is the lowest value
 Total_Months = []
 Total_Profits = []
-Monthly_Change = []
- 
+Average_Change = []
 dates = []
 value = []
  
@@ -19,20 +18,18 @@ with open(csvpath, newline='') as csv_file:
  
   
     highest_value = 0
-    next(csv_reader)  # Header does not print
+    next(csv_reader)  
     for row in csv_reader:
-        # print(row)
+      
         dates.append(row[0])
         value.append(int(row[1]))
-        # print(value)
         profits = int(row[1]) + profits
-        # print(profits)
+        
        
 Total_Months = len(dates)
- 
 Total_Profits = str(profits)
  
-change = []
+
  
 for i in range(len(value)-1):
     change.append (value[i+1]-value[i])
@@ -40,9 +37,9 @@ for i in range(len(value)-1):
    
 Min = min(change)
 Max = max(change)
-date_min = dates[change.index(Min)+1]
-date_max = dates[change.index(Max)+1]
-avg_change = sum(change)/len(change)
+Date_MIN = dates[change.index(Min)+1]
+Date_MAX = dates[change.index(Max)+1]
+Average_Change = sum(change)/len(change)
  
  
  
@@ -51,19 +48,19 @@ print("Financial Analysis")
 print("------------------")
 print("Total Months: " + str(Total_Months))
 print("Total: " + str(Total_Profits))
-print ("Average Change " + '$'+str(round(avg_change,2)))
-print("Greatest Increase in Profits: " + date_max + " $"+str(Max))
-print("Greatest Decrease in Profits: " + date_min + ' ($'+str(abs(Min))+')' )
+print ("Average Change: " + '$'+str(round(Average_Change,2)))
+print("Greatest Increase in Profits: " + Date_MAX + " $"+str(Max))
+print("Greatest Decrease in Profits: " + Date_MIN + ' ($'+str(abs(Min))+')' )
  
 
 f = open("main.txt", "w")
 	
 f.write(
 	"Financial Analysis\n"   +
-	"Total Months "  + str(len(dates))+ '\n' +
-	"Total " + str(sum(value)) + '\n' +
-	"Average Change $" +str(round(sum(change)/len(change))) +'\n'+
-	"Greatest Increase in Profits $" +str(max(value)) +'\n' +
-	"Greatest Decrease in Profits " + '($'+str(abs(Min))+')' 
+	"Total Months: " + str(Total_Months) + '\n' +
+	"Total: " + str(Total_Profits) + '\n' +
+	"Average Change: $" +str(round(Average_Change,2)) +'\n'+
+	"Greatest Increase in Profits: $" +str(max(value)) +'\n' +
+	"Greatest Decrease in Profits: " + '($'+str(abs(Min))+')' 
 	)
 f.close()         
