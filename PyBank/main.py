@@ -7,7 +7,7 @@ Greatest_Increase = 0 # 1170593 is the highest value
 Biggest_Decrease = 0  #  -1196225 is the lowest value
 Total_Months = []
 Total_Profits = []
-Average_Change = []
+change = []
 dates = []
 value = []
  
