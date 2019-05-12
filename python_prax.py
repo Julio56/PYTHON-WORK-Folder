@@ -170,7 +170,7 @@ change = []
 
 
 for i in range(len(value)-1):
-    change.append (value[i+1]-value[i])
+    change.append (value[i+1] - value[i])
 
 Min = min(change)
 Max = max(change)
