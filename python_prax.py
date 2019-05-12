@@ -103,6 +103,8 @@ Total_Months = []
 Total_Profits = []
 Monthly_Change = []
 
+dates = []
+value = []
 ##
 
 
@@ -121,8 +123,7 @@ csvpath = os.path.join('..' ,'RUTJC201904DATA3/hw/week3/Instructions/PyBank/Reso
 with open(csvpath, newline='') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
-    dates = []
-    value = []
+
    
     highest_value = 0
     next(csv_reader)  # Header does not print
@@ -159,13 +160,24 @@ Total_Profits = str(profits)
 
 # lines[0]
 
-## Equation!! Average change in profits
-# avg_Change = sum(value) / len(value)
-# print(avg_Change)
+## Equation!! Average change in profits:  
+# I need to hold the value of each change, 
+## the average change is going to be a loop that gives us the difference 
+#between each of the profits during the month.
+# you can get the differences(kinda like it's own column), then at the end sum the array.
+# **MAKE A LIST WHERE YOU CAN KEEP ADDING TO IT
+change = []
 
+for i in range(len(value)-1):
+    change.append (value[i+1] - value[i])
 
+Min = min(change)
+Max = max(change)
+date_min = dates[change.index(Min)+1]
+date_max = dates[change.index(Max)+1]
+avg_change = sum(change)/len(change)	
 
-
+# print(change)
 
 
 
@@ -187,6 +199,10 @@ print("Financial Analysis")
 print("------------------")
 print("Total Months: " + str(Total_Months))
 print("Total: " + str(Total_Profits))
+print ('Average Change ' + '$'+str(round(avg_change,2)))
+print ('Greatest Increase in Profits ' + date_max + ' $'+str(Max))
+print ("Greatest Decrease in Profits " + date_min + ' ($'+str(abs(Min))+')' )
+
 # print("Average Revenue Change: ")
 # print("Greatest Increase in Profits: " 
 # print("Greatest Decrease in Profits: " 
