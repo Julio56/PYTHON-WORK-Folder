@@ -53,11 +53,11 @@ print("Greatest Increase in Profits: " + Date_MAX + " $"+str(Max))
 print("Greatest Decrease in Profits: " + Date_MIN + ' ($'+str(abs(Min))+')' )
  
 
-csv = open("main.txt", "w")
+#csv = open("main.txt", "w")
 
 with open("PyBank.csv", "w") as out_file:
     csvwriter = csv.writer(out_file, delimiter=',')
-    csvwriter.writerow("Financial Analysis\n")
+    #csvwriter.writerow(['F'])
 
 # 	"Financial Analysis\n"   +
 # 	"Total Months: " + str(Total_Months) + '\n' +
