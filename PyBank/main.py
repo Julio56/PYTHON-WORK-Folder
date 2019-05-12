@@ -15,7 +15,7 @@ csvpath = os.path.join('..' ,'RUTJC201904DATA3/hw/week3/Instructions/PyBank/Reso
 with open(csvpath, newline='') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
- 
+
   
     highest_value = 0
     next(csv_reader)  
@@ -24,7 +24,7 @@ with open(csvpath, newline='') as csv_file:
         dates.append(row[0])
         value.append(int(row[1]))
         profits = int(row[1]) + profits
-        
+  
        
 Total_Months = len(dates)
 Total_Profits = str(profits)
@@ -53,14 +53,17 @@ print("Greatest Increase in Profits: " + Date_MAX + " $"+str(Max))
 print("Greatest Decrease in Profits: " + Date_MIN + ' ($'+str(abs(Min))+')' )
  
 
-f = open("main.txt", "w")
-	
-f.write(
-	"Financial Analysis\n"   +
-	"Total Months: " + str(Total_Months) + '\n' +
-	"Total: " + str(Total_Profits) + '\n' +
-	"Average Change: $" +str(round(Average_Change,2)) +'\n'+
-	"Greatest Increase in Profits: $" +str(max(value)) +'\n' +
-	"Greatest Decrease in Profits: " + '($'+str(abs(Min))+')' 
-	)
-f.close()         
+csv = open("main.txt", "w")
+
+with open("PyBank.csv", "w") as out_file:
+    csvwriter = csv.writer(out_file, delimiter=',')
+    csvwriter.writerow("Financial Analysis\n")
+
+# 	"Financial Analysis\n"   +
+# 	"Total Months: " + str(Total_Months) + '\n' +
+# 	"Total: " + str(Total_Profits) + '\n' +
+# 	"Average Change: $" +str(round(Average_Change,2)) +'\n'+
+# 	"Greatest Increase in Profits: $" +str(max(value)) +'\n' +
+# 	"Greatest Decrease in Profits: " + '($'+str(abs(Min))+')' 
+# 	)
+# f.close()         
