@@ -1,4 +1,4 @@
-# title = "HotDog"
+# title = "Python_Prax"
 # years = 80
 # expert_status = True
 # print("Nick is a professional " + title)
@@ -96,9 +96,20 @@
 #######################################
 import os
 import csv
+profits = 0
+Greatest_Increase = 0 # 1170593 is the highest value
+Biggest_Decrease = 0  #  -1196225 is the lowest value
+Total_Months = []
+Total_Profits = []
+Monthly_Change = []
 
 dates = []
 value = []
+##
+
+
+# dates = []
+# value = []
 
 # with open('RUTJC201904DATA3/hw/week3/Instructions/PyBank/Resources/budget_data.csv', 'r') as file_handler:
 #     lines = file_handler.read()
@@ -106,30 +117,94 @@ value = []
 #     print(type(lines))
 
 
-
+# csvpath = "../RUTJC201904DATA3/hw/week3/Instructions/PyBank/Resources/budget_data.csv"
 csvpath = os.path.join('..' ,'RUTJC201904DATA3/hw/week3/Instructions/PyBank/Resources/budget_data.csv')
  
 with open(csvpath, newline='') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
-    dates = []
+
+   
+    highest_value = 0
     next(csv_reader)  # Header does not print
     for row in csv_reader:
-        # print(row)]
-        dates.append(row[0])
-    print ("There are " + (str(len(dates)) + " months."))
-    #print(dates)    
+        # print(row)
+        dates.append(row[0]) 
+        value.append(row[1])
+        # print(value)
+        profits = int(row[1]) + profits
+        # print(profits)
+    # for Greatest_increase in profits:
+    #     if profits > profits +1:
+    #         Greatest_increase.append(profits)
 
-# print(str(len([0])))
+
+ #Monthly Change in profits
+
+
+
+# print("Total Months: " + (str(len(dates))))
+Total_Months = len(dates)
+
+## Equation!! total number of months included in the dataset!!
+#print(dates)    
+
+# print("Total: " + (str(profits)))       
+##Equation!!The net total amount of "Profit/Losses" 
+# #over the entire period answer !!      
+Total_Profits = str(profits)
+
+
 
 # lines = [line for line in open(csvpath)]
 
 # lines[0]
 
+## Equation!! Average change in profits:  
+# I need to hold the value of each change, 
+## the average change is going to be a loop that gives us the difference 
+#between each of the profits during the month.
+# you can get the differences(kinda like it's own column), then at the end sum the array.
+# **MAKE A LIST WHERE YOU CAN KEEP ADDING TO IT
+change = []
 
-##### We are testing here!!!#####
-##and now we are testing here!!
-#and finally here!!
+for i in range(len(value)-1):
+    change.append (value[i+1] - value[i])
 
+Min = min(change)
+Max = max(change)
+date_min = dates[change.index(Min)+1]
+date_max = dates[change.index(Max)+1]
+avg_change = sum(change)/len(change)	
+
+# print(change)
+
+
+
+# ## Equation!! Greatest Increase in profits (date and amount)
+
+
+
+## Equation!! Biggest Decrease in profits
+
+
+# print(Biggest_Decrease)
+# print(Decrease_Date)
+
+
+
+
+
+print("Financial Analysis")
+print("------------------")
+print("Total Months: " + str(Total_Months))
+print("Total: " + str(Total_Profits))
+print ('Average Change ' + '$'+str(round(avg_change,2)))
+print ('Greatest Increase in Profits ' + date_max + ' $'+str(Max))
+print ("Greatest Decrease in Profits " + date_min + ' ($'+str(abs(Min))+')' )
+
+# print("Average Revenue Change: ")
+# print("Greatest Increase in Profits: " 
+# print("Greatest Decrease in Profits: " 
 
 
